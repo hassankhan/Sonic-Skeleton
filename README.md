@@ -21,7 +21,7 @@ You need **PHP >= 5.3.0**, and [Composer](//getcomposer.org/) is highly recommen
 
 ### Project setup
 
-// Edit stuff
+// All the stuff in config/
 
 ### First Run
 
@@ -31,7 +31,6 @@ After running ``composer install``, your project root should now look like this:
     ├── .htaccess
     ├── composer.json
     ├── composer.lock
-    ├── config.php
     ├── index.php
     ├── config/
     ├── content/
