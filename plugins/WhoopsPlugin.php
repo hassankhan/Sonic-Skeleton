@@ -12,10 +12,13 @@ use Whoops\Run;
  * @license    MIT
  * @since      0.4
  */
-class WhoopsPlugin implements \Zepto\PluginInterface {
+class WhoopsPlugin extends \Sonic\PluginAbstract {
 
-    public function after_plugins_load(\Pimple $app)
+    public function after_plugins_load()
     {
+        // Get local reference
+        $app = $this->sonic->app;
+
         // Add Whoops handlers
         $app['whoopsPrettyPageHandler'] = $app->factory(
             function () {
@@ -43,9 +46,9 @@ class WhoopsPlugin implements \Zepto\PluginInterface {
             }
 
             $handler->addDataTable(
-                'Zepto Application',
+                'Sonic Application',
                 array_merge(array(
-                    'Version' => \Zepto\Zepto::VERSION,
+                    'Version' => \Sonic\Sonic::VERSION,
                     'Charset' => $app['request']->headers->get('Accept-Charset'),
                     'Locale'  => $app['request']->getPreferredLanguage()
                 ), $route_details)
@@ -75,15 +78,18 @@ class WhoopsPlugin implements \Zepto\PluginInterface {
             $run = new Run();
             $run->pushHandler($app['whoopsPrettyPageHandler']);
             $run->pushHandler($app['whoopsJsonResponseHandler']);
-            $run->pushHandler($app['whoopsZeptoInfoHandler']);
+            $run->pushHandler($app['whoopsSonicInfoHandler']);
             return $run;
         };
     }
 
-    public function before_config_load(\Pimple $app, &$settings)
+    public function before_config_load(&$settings)
     {
+        // Get local reference
+        $app = $this->sonic->app;
+
         // If we're not on dev, then don't load up
-        if ($settings['zepto.environment'] !== 'dev') {
+        if ($settings['sonic.environment'] !== 'dev') {
             return;
         }
 
@@ -97,19 +103,19 @@ class WhoopsPlugin implements \Zepto\PluginInterface {
         }
     }
 
-    public function before_router_setup(\Pimple $app)
+    public function before_router_setup()
     {
     }
 
-    public function after_router_setup(\Pimple $app)
+    public function after_router_setup()
     {
     }
 
-    public function before_response_send(\Pimple $app)
+    public function before_response_send()
     {
     }
 
-    public function after_response_send(\Pimple $app)
+    public function after_response_send()
     {
     }
 
