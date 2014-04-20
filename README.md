@@ -61,14 +61,6 @@ Sonic hasn't been tested on other configurations yet, but because of how similar
 
 You can check out more in-depth documentation [here](//github.com/hassankhan/Sonic/wiki/Documentation).
 
-## Author
-
-Sonic is created and maintained by [Hassan Khan](//hassankhan.me).
-
-## Credits
-
-Clearly a lot of help (especially) from [Slim](//slimframework.com/), as is apparent from the source code. This also would not have been possible without [Pico](//pico.dev7studios.com/), [Symfony](//symfony.com/), or more specifically, the [Symfony HttpFoundation](//symfony.com/doc/current/components/http_foundation/introduction.html) component, [PHP-Markdown](//michelf.ca/projects/php-markdown/) and many others. The open-source PHP community in general does a fantastic job of polishing turds.
-
 ## License
 
-Sonic is released under the MIT public license.
+Sonic Skeleton is released under the MIT public license.
