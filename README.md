@@ -1,6 +1,6 @@
 # Sonic Skeleton
 
-This repo is a skeleton project. The actual framework code is at [//github.com/hassankhan/Sonic](//github.com/hassankhan/Sonic).
+This repo is a skeleton project. The actual framework code is at [github.com/hassankhan/Sonic](//github.com/hassankhan/Sonic).
 
 ## Getting Started
 
